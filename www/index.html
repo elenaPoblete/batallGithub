@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/index.css">
+        <title>Batalla de github</title>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        
+    </head>
+    <body class="grey lighten-4">
+        
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <h1>Bienvenido a la Batalla de Github</h1>
+                </div>
+
+                <!-- Div de los formularios de ingreso de usuarios competidores -->
+                <div id="start" class="row">
+
+                    <!-- Div del competidor N° 1 -->
+                    <div class="col m6">                        
+                        <div class="col s12">
+                            <div class="card blue-grey lighten-5">
+                                <div class="card-action">
+                                    
+                                    <div class="row">
+                                        <div class="col s12">
+                                            Ingresa el usuario 1
+                                            <div class="input-field inline">
+                                                <input id="user1" type="text" class="validate">
+                                                <label for="user1" class="browser-default">Usuario 1</label>
+                                                <button id="btn-buscar1" class="waves-effect orange btn">Buscar</button>
+                                            </div>                                 
+                                        </div>
+                                        <div class="col s12">
+                                            <img id="avatar1" src="img/user.png" alt="Avatar" class="avatar"/>
+                                        </div>
+                                        <div class="col s12">
+                                            <div class="col s6">Repositorios públicos:</div>
+                                            <div  id="public_repo1" class="col s6">0</div>
+                                        </div>
+                                        <div class="col s12">
+                                            <div class="col s6">Número de seguidores:</div>
+                                            <div id="seguidores1" class="col s6">0</div>           
+                                        </div>
+                                        <div class="col s12">
+                                            <div class="col s6">Siguiendo a:</div>
+                                            <div id="seguidos1" class="col s6">0</div>
+                                        </div>
+                                        <div class="col s12">
+                                            <div class="col s6">Gists públicos:</div>
+                                            <div id="gists1" class="col s6">0</div>
+                                        </div>
+                                        <div class="col s12">
+                                            <div class="col s6">Puntaje total:</div>
+                                            <div id="total1" class="col s6 span-total">0</div>
+                                        </div>
+                                    </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fin div del competidor N° 1 -->
+
+                    <!-- Div del competidor N° 2 -->
+                    <div class="col m6">
+
+                        <div class="col s12">
+                            <div class="card blue-grey lighten-5">
+                                <div class="card-action">
+                                    
+                                    <div class="row">
+                                        <div class="col s12">
+                                            Ingresa el usuario 2
+                                            <div class="input-field inline">
+                                                <input id="user2" type="text" class="validate">
+                                                <label for="user2">Usuario 2</label>                                            
+                                                <button id="btn-buscar2" class="waves-effect orange btn">Buscar</button>
+                                            </div>
+                                        </div>
+                                        <div class="col s12">
+                                            <img id="avatar2" src="img/user.png" alt="Avatar" class="avatar"/>
+                                        </div>
+                                        <div class="col s12">
+                                            <div class="col s6">Repositorios públicos:</div>
+                                            <div  id="public_repo2" class="col s6">0</div>
+                                        </div>
+                                        <div class="col s12">
+                                            <div class="col s6">Número de seguidores:</div>
+                                            <div id="seguidores2" class="col s6">0</div>           
+                                        </div>
+                                        <div class="col s12">
+                                            <div class="col s6">Siguiendo a:</div>
+                                            <div id="seguidos2" class="col s6">0</div>
+                                        </div>
+                                        <div class="col s12">
+                                            <div class="col s6">Gists públicos:</div>
+                                            <div id="gists2" class="col s6">0</div>
+                                        </div>
+                                        <div class="col s12">
+                                            <div class="col s6">Puntaje total:</div>
+                                            <div id="total2" class="col s6 span-total">0</div>
+                                        </div>
+                                    </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fin div del competidor N° 2 -->
+
+                    <div class="col s1 push-s5">
+                        <button id="btn-batalla" class="waves-effect orange btn" disabled="true">Batalla</button>
+                    </div>
+                </div>
+                <!-- Fin div de los formularios de ingreso de usuarios competidores -->
+
+                <!-- Div donde se muestra al ganador -->
+                <div id="win" class="col s12">
+                    <div class="col s12">
+                        <div class="col s6 push-s3">
+                            <h5 id="ganador"></h5>
+                        </div>
+                    </div>
+                    <div class="col s1 push-s5">
+                        <button id="btn-volver" class="waves-effect orange btn">Volver</button>
+                    </div>
+                </div>
+                <!-- Fin div donde se muestra al ganador -->
+            </div>
+
+
+        </div>
+        <script src="cordova.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
